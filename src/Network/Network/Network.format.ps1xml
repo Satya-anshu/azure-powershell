@@ -2064,6 +2064,10 @@
                 <Label>Tags</Label>
                 <PropertyName>TagsTable</PropertyName>
               </ListItem>
+			  <ListItem>
+                <Label>FlushConnection</Label>
+                <PropertyName>FlushConnectionText</PropertyName>
+              </ListItem>
               <ListItem>
                 <Label>SecurityRules</Label>
                 <PropertyName>SecurityRulesText</PropertyName>
