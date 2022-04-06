@@ -43,6 +43,7 @@ Etag                        : W/"00000000-0000-0000-0000-000000000000"
 ResourceGuid                : 00000000-0000-0000-0000-000000000000
 ProvisioningState           : Succeeded
 Tags                        :
+FlushConnection             : False
 SecurityRules               : []
 DefaultSecurityRules        : [
                                 {
@@ -222,6 +223,7 @@ Etag                        : W/"00000000-0000-0000-0000-000000000000"
 ResourceGuid                : 00000000-0000-0000-0000-000000000000
 ProvisioningState           : Succeeded
 Tags                        :
+FlushConnection             : False
 SecurityRules               : []
 DefaultSecurityRules        : [
                                 {
