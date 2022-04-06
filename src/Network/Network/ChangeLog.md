@@ -24,6 +24,8 @@
 * Added support for accepting Vnet, Subnet and NIC resources as the TargetResourceId for the following cmdlets
     - `Set-AzNetworkWatcherFlowLog`
     - `New-AzNetworkWatcherFlowLog`
+* Added support for connection flushing in network security group which when enabled, re-evaluates flows when rules are updated
+    - `New-AzNetworkSecurityGroup`
 
 ## Version 4.15.0
 * Added new property `SqlSetting` for Azure Firewall Policy cmdlets 
