@@ -33,7 +33,7 @@ Links an Azure Notification Hub to this communication service.
 
 ### Example 1: Provide Notification Hub details interactively
 ```powershell
-PS C:\> Set-AzCommunicationServiceNotificationHub -CommunicationServiceName ContosoAcsResource2 -ResourceGroupName ContosoResourceProvider1 -ConnectionString "<notificationhub-connectionstring>" -NotificationHubResourceId "<notificationhub-resourceid>"
+Set-AzCommunicationServiceNotificationHub -CommunicationServiceName ContosoAcsResource2 -ResourceGroupName ContosoResourceProvider1 -ConnectionString "<notificationhub-connectionstring>" -NotificationHubResourceId "<notificationhub-resourceid>"
 ```
 
 A linked notification hub allows a ACS resource to send notifications for certain events.
@@ -198,7 +198,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-LINKNOTIFICATIONHUBPARAMETER <ILinkNotificationHubParameters>: Description of an Azure Notification Hub to link to the communication service
+LINKNOTIFICATIONHUBPARAMETER `<ILinkNotificationHubParameters>`: Description of an Azure Notification Hub to link to the communication service
   - `ConnectionString <String>`: Connection string for the notification hub
   - `ResourceId <String>`: The resource ID of the notification hub
 

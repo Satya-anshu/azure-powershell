@@ -38,6 +38,11 @@ namespace Microsoft.Azure.Commands.Management.Storage
         /// </summary>
         private const string ActiveDirectoryDomainServicesForFileParameterSet = "ActiveDirectoryDomainServicesForFile";
 
+        /// <summary>
+        /// Set AzureActiveDirectoryKerberosForFile parameter set name
+        /// </summary>
+        private const string AzureActiveDirectoryKerberosForFileParameterSet = "AzureActiveDirectoryKerberosForFile";        
+
         [Parameter(
             Position = 0,
             Mandatory = true,
@@ -280,6 +285,23 @@ namespace Microsoft.Azure.Commands.Management.Storage
         }
         private bool? publishInternetEndpoint = null;
 
+        [Parameter(
+            Mandatory = true,
+            HelpMessage = "Enable Azure Files Active Directory Domain Service Kerberos Authentication for the storage account.",
+            ParameterSetName = AzureActiveDirectoryKerberosForFileParameterSet)]
+        [ValidateNotNullOrEmpty]
+        public bool EnableAzureActiveDirectoryKerberosForFile
+        {
+            get
+            {
+                return enableAzureActiveDirectoryKerberosForFile.HasValue ? enableAzureActiveDirectoryKerberosForFile.Value : false;
+            }
+            set
+            {
+                enableAzureActiveDirectoryKerberosForFile = value;
+            }
+        }
+        private bool? enableAzureActiveDirectoryKerberosForFile = null;
 
         [Parameter(
             Mandatory = false,
@@ -301,8 +323,12 @@ namespace Microsoft.Azure.Commands.Management.Storage
 
         [Parameter(
             Mandatory = false,
-            HelpMessage = "Specifies the primary domain that the AD DNS server is authoritative for. This parameter must be set when -EnableActiveDirectoryDomainServicesForFile is set to true.",
+            HelpMessage = "Specifies the primary domain that the AD DNS server is authoritative for. This parameter must be set when -EnableActiveDirectoryDomainServicesForFile or -EnableAzureActiveDirectoryKerberosForFile is set to true.",
             ParameterSetName = ActiveDirectoryDomainServicesForFileParameterSet)]
+        [Parameter(
+            Mandatory = false,
+            HelpMessage = "Specifies the primary domain that the AD DNS server is authoritative for. This parameter must be set when -EnableActiveDirectoryDomainServicesForFile or -EnableAzureActiveDirectoryKerberosForFile is set to true.",
+            ParameterSetName = AzureActiveDirectoryKerberosForFileParameterSet)]
         [ValidateNotNullOrEmpty]
         public string ActiveDirectoryDomainName { get; set; }
 
@@ -322,8 +348,12 @@ namespace Microsoft.Azure.Commands.Management.Storage
 
         [Parameter(
             Mandatory = false,
-            HelpMessage = "Specifies the domain GUID. This parameter must be set when -EnableActiveDirectoryDomainServicesForFile is set to true.",
+            HelpMessage = "Specifies the domain GUID. This parameter must be set when -EnableActiveDirectoryDomainServicesForFile or -EnableAzureActiveDirectoryKerberosForFile is set to true.",
             ParameterSetName = ActiveDirectoryDomainServicesForFileParameterSet)]
+        [Parameter(
+            Mandatory = false,
+            HelpMessage = "Specifies the domain GUID. This parameter must be set when -EnableActiveDirectoryDomainServicesForFile or -EnableAzureActiveDirectoryKerberosForFile is set to true.",
+            ParameterSetName = AzureActiveDirectoryKerberosForFileParameterSet)]
         [ValidateNotNullOrEmpty]
         public string ActiveDirectoryDomainGuid { get; set; }
 
@@ -340,6 +370,21 @@ namespace Microsoft.Azure.Commands.Management.Storage
             ParameterSetName = ActiveDirectoryDomainServicesForFileParameterSet)]
         [ValidateNotNullOrEmpty]
         public string ActiveDirectoryAzureStorageSid { get; set; }
+
+        [Parameter(
+            Mandatory = false,
+            HelpMessage = "Specifies the Active Directory SAMAccountName for Azure Storage.",
+            ParameterSetName = ActiveDirectoryDomainServicesForFileParameterSet)]
+        [ValidateNotNullOrEmpty]
+        public string ActiveDirectorySamAccountName { get; set; }
+
+        [Parameter(
+            Mandatory = false,
+            HelpMessage = "Specifies the Active Directory account type for Azure Storage. Possible values include: 'User', 'Computer'.",
+            ParameterSetName = ActiveDirectoryDomainServicesForFileParameterSet)]
+        [PSArgumentCompleter("User", "Computer")]
+        [ValidateNotNullOrEmpty]
+        public string ActiveDirectoryAccountType { get; set; }
 
         [Parameter(Mandatory = false, HelpMessage = "Run cmdlet in the background")]
         public SwitchParameter AsJob { get; set; }
@@ -593,7 +638,7 @@ namespace Microsoft.Azure.Commands.Management.Storage
             {
                 createParameters.IsHnsEnabled = enableHierarchicalNamespace;
             }
-            if (enableAzureActiveDirectoryDomainServicesForFile !=null || enableActiveDirectoryDomainServicesForFile != null)
+            if (enableAzureActiveDirectoryDomainServicesForFile !=null || enableActiveDirectoryDomainServicesForFile != null || enableAzureActiveDirectoryKerberosForFile != null)
             {
                 createParameters.AzureFilesIdentityBasedAuthentication = new AzureFilesIdentityBasedAuthentication();
                 if (enableAzureActiveDirectoryDomainServicesForFile != null && enableAzureActiveDirectoryDomainServicesForFile.Value)
@@ -621,8 +666,22 @@ namespace Microsoft.Azure.Commands.Management.Storage
                         ForestName = this.ActiveDirectoryForestName,
                         DomainGuid = this.ActiveDirectoryDomainGuid,
                         DomainSid = this.ActiveDirectoryDomainSid,
-                        AzureStorageSid = this.ActiveDirectoryAzureStorageSid
+                        AzureStorageSid = this.ActiveDirectoryAzureStorageSid,
+                        SamAccountName = this.ActiveDirectorySamAccountName,
+                        AccountType = this.ActiveDirectoryAccountType
                     };
+                }
+                else if (enableAzureActiveDirectoryKerberosForFile != null && enableAzureActiveDirectoryKerberosForFile.Value)
+                {
+                    createParameters.AzureFilesIdentityBasedAuthentication.DirectoryServiceOptions = DirectoryServiceOptions.AADKERB;
+                    if (this.ActiveDirectoryDomainName != null || this.ActiveDirectoryDomainGuid != null)
+                    {
+                        createParameters.AzureFilesIdentityBasedAuthentication.ActiveDirectoryProperties = new ActiveDirectoryProperties()
+                        {
+                            DomainName = this.ActiveDirectoryDomainName,
+                            DomainGuid = this.ActiveDirectoryDomainGuid
+                        };
+                    }
                 }
                 else
                 {
