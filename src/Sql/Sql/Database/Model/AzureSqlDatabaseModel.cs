@@ -211,6 +211,22 @@ namespace Microsoft.Azure.Commands.Sql.Database.Model
         public bool? EnableLedger { get; set; }
 
         /// <summary>
+        /// Gets or sets type of enclave requested on the database i.e. Default
+        /// or VBS enclaves. Possible values include: 'Default', 'VBS'
+        /// </summary>
+        public string PreferredEnclaveType { get; set; }
+
+        /// <summary>
+        /// Gets or sets the PausedDate
+        /// </summary>
+        public DateTime? PausedDate { get; set; }
+
+        /// <summary>
+        /// Gets or sets the ResumeDate
+        /// </summary>
+        public DateTime? ResumedDate { get; set; }
+
+        /// <summary>
         /// Construct AzureSqlDatabaseModel
         /// </summary>
         public AzureSqlDatabaseModel()
@@ -269,6 +285,9 @@ namespace Microsoft.Azure.Commands.Sql.Database.Model
             SecondaryType = null;
             MaintenanceConfigurationId = null;
             EnableLedger = false;
+            PausedDate = null;
+            ResumedDate = null;
+            PreferredEnclaveType = null;
         }
 
         /// <summary>
@@ -325,6 +344,9 @@ namespace Microsoft.Azure.Commands.Sql.Database.Model
             SecondaryType = database.SecondaryType;
             MaintenanceConfigurationId = database.MaintenanceConfigurationId;
             EnableLedger = database.IsLedgerOn;
+            PausedDate = database.PausedDate;
+            ResumedDate = database.ResumedDate;
+            PreferredEnclaveType = database.PreferredEnclaveType;
         }
 
         /// <summary>

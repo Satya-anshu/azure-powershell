@@ -2,7 +2,7 @@
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
 ms.assetid: 0F141A92-4994-45B3-AE94-09865BC691C4
-online version: https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworkgatewayconnection
+online version: https://learn.microsoft.com/powershell/module/az.network/new-azvirtualnetworkgatewayconnection
 schema: 2.0.0
 ---
 
@@ -23,7 +23,7 @@ New-AzVirtualNetworkGatewayConnection -Name <String> -ResourceGroupName <String>
  [-Force] [-UsePolicyBasedTrafficSelectors <Boolean>] [-IpsecPolicies <PSIpsecPolicy[]>]
  [-TrafficSelectorPolicy <PSTrafficSelectorPolicy[]>] [-ConnectionProtocol <String>]
  [-IngressNatRule <PSResourceId[]>] [-EgressNatRule <PSResourceId[]>] [-AsJob] [-ExpressRouteGatewayBypass]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-EnablePrivateLinkFastPath] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SetByResourceId
@@ -36,7 +36,7 @@ New-AzVirtualNetworkGatewayConnection -Name <String> -ResourceGroupName <String>
  [-Force] [-UsePolicyBasedTrafficSelectors <Boolean>] [-IpsecPolicies <PSIpsecPolicy[]>]
  [-TrafficSelectorPolicy <PSTrafficSelectorPolicy[]>] [-ConnectionProtocol <String>]
  [-IngressNatRule <PSResourceId[]>] [-EgressNatRule <PSResourceId[]>] [-AsJob] [-ExpressRouteGatewayBypass]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-EnablePrivateLinkFastPath] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -215,6 +215,21 @@ Accept wildcard characters: False
 
 ### -ExpressRouteGatewayBypass
 Whether to use accelerated virtual network access by bypassing gateway
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -EnablePrivateLinkFastPath
+Bypass the ExpressRoute gateway when accessing private-links. ExpressRoute FastPath (ExpressRouteGatewayBypass) must be enabled.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

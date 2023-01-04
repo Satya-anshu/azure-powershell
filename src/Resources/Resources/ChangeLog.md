@@ -20,6 +20,41 @@
 
 ## Upcoming Release
 
+## Version 6.5.1
+* Fixed issue introduced in previous fix for `Set-AzPolicySetDefinition` InternalServerError when the initiative is too large [#20238], which will remove space in value.
+* Fixed `Get-AzRoleAssignment` BadRequest when scope is '/' [#20323]
+
+## Version 6.5.0
+* Added cmdlet `Get-AzADOrganization`
+* Fixed `Set-AzPolicySetDefinition` InternalServerError when the initiative is too large [#20238]
+
+## Version 6.4.1
+* Upgraded AutoMapper to Microsoft.Azure.PowerShell.AutoMapper 6.2.2 with fix [#18721]
+
+## Version 6.4.0
+* Fixed parameter `Count` for
+    - Get-AzADApplication
+    - Get-AzADServicePrincipal
+    - Get-AzADUser
+* Polished preview warning message for:
+    - Add-AzADGroupMember
+    - Get-AzADGroupMember
+    - Remove-AzADGroupMember
+* Fixed a `NullReferenceException` when deploying a JSON template using Bicep extensibility
+* Added `-AsJob` to support running `Register-AzResourceProvider` as a Job
+
+## Version 6.3.1
+* Fixed NullReferenceException issue in `New-AzRoleAssignment` [#19793]
+
+## Version 6.3.0
+* Removed unused reference to resource identifier in role assignment create cmdlet
+* Exposed parameter `-Count` for `Get-AzADApplication`, `Get-AzADServicePrincipal`, `Get-AzADGroup` [#19476] 
+
+## Version 6.2.0
+* Fixed bug `-Password` overwrite `-PasswordProfile` in `New-AzADUser` [#19265]
+* Exposed `EmployeeOrgData` `Manager` for `Get-AzADUSer` [#18205]
+* Exposed parameter `-Count` for `Get-AzADUser` [#16874] 
+
 ## Version 6.1.0
 * Removed the warning messages for MSGraph migration [#18856]
 * [Breaking Change] Renamed cmdlet from `{}-AzADAppFederatedIdentityCredential` to `{}-AzADAppFederatedCredential`

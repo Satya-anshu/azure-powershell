@@ -2,7 +2,7 @@
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
 ms.assetid: A3D60CF1-2E66-4EE5-9C68-932DD8DF80BD
-online version: https://docs.microsoft.com/powershell/module/az.network/new-azfirewall
+online version: https://learn.microsoft.com/powershell/module/az.network/new-azfirewall
 schema: 2.0.0
 ---
 
@@ -22,7 +22,7 @@ New-AzFirewall -Name <String> -ResourceGroupName <String> -Location <String>
  [-ThreatIntelWhitelist <PSAzureFirewallThreatIntelWhitelist>] [-PrivateRange <String[]>] [-EnableDnsProxy]
  [-DnsServer <String[]>] [-Tag <Hashtable>] [-Force] [-AsJob] [-Zone <String[]>] [-SkuName <String>]
  [-SkuTier <String>] [-VirtualHubId <String>] [-HubIPAddress <PSAzureFirewallHubIpAddresses>]
- [-FirewallPolicyId <String>] [-AllowActiveFTP] [-IdentifyTopFatFlow]
+ [-FirewallPolicyId <String>] [-AllowActiveFTP] [-EnableFatFlowLogging] [-EnableUDPLogOptimization]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -35,7 +35,7 @@ New-AzFirewall -Name <String> -ResourceGroupName <String> -Location <String> -Vi
  [-ThreatIntelWhitelist <PSAzureFirewallThreatIntelWhitelist>] [-PrivateRange <String[]>] [-EnableDnsProxy]
  [-DnsServer <String[]>] [-Tag <Hashtable>] [-Force] [-AsJob] [-Zone <String[]>] [-SkuName <String>]
  [-SkuTier <String>] [-VirtualHubId <String>] [-HubIPAddress <PSAzureFirewallHubIpAddresses>]
- [-FirewallPolicyId <String>] [-AllowActiveFTP] [-IdentifyTopFatFlow]
+ [-FirewallPolicyId <String>] [-AllowActiveFTP] [-EnableFatFlowLogging] [-EnableUDPLogOptimization]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -49,7 +49,7 @@ New-AzFirewall -Name <String> -ResourceGroupName <String> -Location <String> -Vi
  [-ThreatIntelWhitelist <PSAzureFirewallThreatIntelWhitelist>] [-PrivateRange <String[]>] [-EnableDnsProxy]
  [-DnsServer <String[]>] [-Tag <Hashtable>] [-Force] [-AsJob] [-Zone <String[]>] [-SkuName <String>]
  [-SkuTier <String>] [-VirtualHubId <String>] [-HubIPAddress <PSAzureFirewallHubIpAddresses>]
- [-FirewallPolicyId <String>] [-AllowActiveFTP] [-IdentifyTopFatFlow]
+ [-FirewallPolicyId <String>] [-AllowActiveFTP] [-EnableFatFlowLogging] [-EnableUDPLogOptimization]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -358,6 +358,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -EnableUDPLogOptimization
+Enable UDP Log Optimization. By default it is false.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -FirewallPolicyId
 The firewall policy attached to the firewall
 
@@ -403,8 +418,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IdentifyTopFatFlow
-Identify Top Fat Flows. By default it is false.
+### -EnableFatFlowLogging
+Enable Fat Flow Logging. By default it is false.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

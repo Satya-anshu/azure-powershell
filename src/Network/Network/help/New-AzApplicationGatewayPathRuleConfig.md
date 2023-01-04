@@ -2,7 +2,7 @@
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
 ms.assetid: A1F949A9-7AEF-41C1-B757-114421B79493
-online version: https://docs.microsoft.com/powershell/module/az.network/new-azapplicationgatewaypathruleconfig
+online version: https://learn.microsoft.com/powershell/module/az.network/new-azapplicationgatewaypathruleconfig
 schema: 2.0.0
 ---
 
@@ -173,7 +173,7 @@ Specifies the ID of an existing top-level web application firewall resource.
 Firewall policy IDs can be returned by using the Get-AzApplicationGatewayWebApplicationFirewallPolicy cmdlet. 
 After we have the ID you can use *FirewallPolicyId* parameter instead of *FirewallPolicy* parameter.
 For instance:
--FirewallPolicyId  "/subscriptions/<subscription-id>/resourceGroups/<resource-group-id>/providers/Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies/<firewallPolicyName>"
+-FirewallPolicyId  `/subscriptions/<subscription-id>/resourceGroups/<resource-group-id>/providers/Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies/<firewallPolicyName>`
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayWebApplicationFirewallPolicy

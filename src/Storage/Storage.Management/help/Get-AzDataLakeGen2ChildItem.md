@@ -1,14 +1,14 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Storage.dll-Help.xml
 Module Name: Az.Storage
-online version: https://docs.microsoft.com/powershell/module/az.storage/get-azdatalakegen2childitem
+online version: https://learn.microsoft.com/powershell/module/az.storage/get-azdatalakegen2childitem
 schema: 2.0.0
 ---
 
 # Get-AzDataLakeGen2ChildItem
 
 ## SYNOPSIS
-Lists sub directorys and files from a directory or filesystem root.
+Lists sub directories and files from a directory or filesystem root.
 
 ## SYNTAX
 

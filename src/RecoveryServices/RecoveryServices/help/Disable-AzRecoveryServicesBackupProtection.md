@@ -2,7 +2,7 @@
 external help file: Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.Backup.dll-Help.xml
 Module Name: Az.RecoveryServices
 ms.assetid: ECD3F05A-9350-407E-8B48-67443547652F
-online version: https://docs.microsoft.com/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupprotection
+online version: https://learn.microsoft.com/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupprotection
 schema: 2.0.0
 ---
 
@@ -29,7 +29,7 @@ Set the vault context by using the Set-AzRecoveryServicesVaultContext cmdlet bef
 
 ### Example 1: Disable Backup protection
 ```powershell
-$Cont = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -Status Registered
+$Cont = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM
 $PI = Get-AzRecoveryServicesBackupItem -Container $Cont[0] -WorkloadType AzureVM
 Disable-AzRecoveryServicesBackupProtection -Item $PI[0]
 ```

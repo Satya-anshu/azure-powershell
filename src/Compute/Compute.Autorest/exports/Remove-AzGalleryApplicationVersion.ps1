@@ -20,7 +20,7 @@ Delete a gallery Application Version.
 .Description
 Delete a gallery Application Version.
 .Example
-Remove-AzGalleryApplication -ResourceGroupName $rgNmae -GalleryName $galleryName -GalleryApplicationName $galleryApplicationName -Name $name
+Remove-AzGalleryApplicationVersion -ResourceGroupName $rgNmae -GalleryName $galleryName -GalleryApplicationName $galleryApplicationName -Name $name
 
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.Compute.Models.IComputeIdentity
@@ -47,7 +47,7 @@ INPUTOBJECT <IComputeIdentity>: Identity Parameter
   [VMName <String>]: The name of the virtual machine where the run command should be created or updated.
   [VMScaleSetName <String>]: The name of the VM scale set.
 .Link
-https://docs.microsoft.com/powershell/module/az.compute/remove-azgalleryapplicationversion
+https://learn.microsoft.com/powershell/module/az.compute/remove-azgalleryapplicationversion
 #>
 function Remove-AzGalleryApplicationVersion {
 [OutputType([System.Boolean])]

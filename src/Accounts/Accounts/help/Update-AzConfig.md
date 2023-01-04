@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Accounts.dll-Help.xml
 Module Name: Az.Accounts
-online version: https://docs.microsoft.com/powershell/module/az.accounts/update-azconfig
+online version: https://learn.microsoft.com/powershell/module/az.accounts/update-azconfig
 schema: 2.0.0
 ---
 
@@ -15,7 +15,7 @@ Updates the configs of Azure PowerShell.
 ```
 Update-AzConfig [-AppliesTo <String>] [-Scope <ConfigScope>] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [-DefaultSubscriptionForLogin <String>] [-DisplayBreakingChangeWarning <Boolean>]
- [-EnableDataCollection <Boolean>] [<CommonParameters>]
+ [-DisplaySurveyMessage <Boolean>] [-EnableDataCollection <Boolean>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -124,6 +124,21 @@ Accept wildcard characters: False
 
 ### -DisplayBreakingChangeWarning
 Controls if warning messages for breaking changes are displayed or suppressed. When enabled, a breaking change warning is displayed when executing cmdlets with breaking changes in a future release.
+
+```yaml
+Type: System.Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DisplaySurveyMessage
+When enabled, you are prompted infrequently to participate in user experience surveys for Azure PowerShell.
 
 ```yaml
 Type: System.Boolean

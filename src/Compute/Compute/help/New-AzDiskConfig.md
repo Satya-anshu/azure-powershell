@@ -52,6 +52,8 @@ takes the disk object and creates a disk with name 'Disk01' in resource group 'R
 
 ### Example 2
 <!-- Skip: Output cannot be splitted from code -->
+
+
 ```powershell
 $diskconfig = New-AzDiskConfig -Location 'Central US' -DiskSizeGB 1023 -SkuName Standard_LRS -OsType Windows -CreateOption Upload -DiskIOPSReadWrite 500 -DiskMBpsReadWrite 8;
 New-AzDisk -ResourceGroupName 'ResourceGroup01' -DiskName 'Disk01' -Disk $diskconfig;
@@ -251,7 +253,7 @@ Accept wildcard characters: False
 ```
 
 ### -DiskMBpsReadOnly
-"description": "The total throughput (MBps) that will be allowed across all VMs mounting the shared disk as ReadOnly. MBps means millions of bytes per second - MB here uses the ISO notation, of powers of 10.
+The total throughput (MBps) that will be allowed across all VMs mounting the shared disk as ReadOnly. MBps means millions of bytes per second - MB here uses the ISO notation, of powers of 10.
 
 ```yaml
 Type: System.Int64

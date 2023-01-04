@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.dll-Help.xml
 Module Name: Az.RecoveryServices
-online version: https://docs.microsoft.com/powershell/module/az.recoveryservices/update-azrecoveryservicesvault
+online version: https://learn.microsoft.com/powershell/module/az.recoveryservices/update-azrecoveryservicesvault
 schema: 2.0.0
 ---
 
@@ -23,9 +23,8 @@ Update-AzRecoveryServicesVault [-ResourceGroupName] <String> [-Name] <String> [-
 ### AzureRSVaultAddMSIdentity
 ```
 Update-AzRecoveryServicesVault [-ResourceGroupName] <String> [-Name] <String> -IdentityType <MSIdentity>
- [-IdentityId <String[]>] [-DisableClassicAlerts <Boolean>]
- [-DisableAzureMonitorAlertsForJobFailure <Boolean>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+ [-IdentityId <String[]>] [-DisableClassicAlerts <Boolean>] [-DisableAzureMonitorAlertsForJobFailure <Boolean>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

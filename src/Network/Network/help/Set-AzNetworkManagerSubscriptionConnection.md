@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
-online version: https://docs.microsoft.com/powershell/module/az.network/set-aznetworkmanagersubscriptionconnection
+online version: https://learn.microsoft.com/powershell/module/az.network/set-aznetworkmanagersubscriptionconnection
 schema: 2.0.0
 ---
 
@@ -136,8 +136,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Remove-PSNetworkManagerConnection](./Remove-PSNetworkManagerConnection.md)
+[Remove-AzNetworkManagerManagementGroupConnection](./Remove-AzNetworkManagerManagementGroupConnection.md)
 
-[Get-PSNetworkManagerConnection](./Get-PSNetworkManagerConnection.md)
+[Get-AzNetworkManagerManagementGroupConnection](./Get-AzNetworkManagerManagementGroupConnection.md)
 
-[New-PSNetworkManagerConnection](./New-PSNetworkManagerConnection.md)
+[New-AzNetworkManagerManagementGroupConnection](./New-AzNetworkManagerManagementGroupConnection.md)

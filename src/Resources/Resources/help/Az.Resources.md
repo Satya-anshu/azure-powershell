@@ -1,7 +1,7 @@
 ---
 Module Name: Az.Resources
 Module Guid: ab3ca893-26fe-44b0-bd3c-8933df144d7b
-Download Help Link: https://docs.microsoft.com/powershell/module/az.resources
+Download Help Link: https://learn.microsoft.com/powershell/module/az.resources
 Help Version: 5.5.2.0
 Locale: en-US
 ---
@@ -40,6 +40,9 @@ Lists entities from groups or get entity from groups by key
 
 ### [Get-AzADGroupMember](Get-AzADGroupMember.md)
 Lists members from group.
+
+### [Get-AzADOrganization](Get-AzADOrganization.md)
+Retrieve a list of organization objects.
 
 ### [Get-AzADServicePrincipal](Get-AzADServicePrincipal.md)
 Lists entities from service principals or get entity from service principals by key
@@ -252,7 +255,7 @@ Creates key credentials or password credentials for an service principal.
 Adds new entity to users
 
 ### [New-AzDeployment](New-AzDeployment.md)
-Create a deployment
+Create a deployment at the current subscription scope.
 
 ### [New-AzManagedApplication](New-AzManagedApplication.md)
 Creates an Azure managed application.

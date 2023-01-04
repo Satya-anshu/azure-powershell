@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
-online version: https://docs.microsoft.com/powershell/module/az.network/new-aznetworkmanagerstaticmember
+online version: https://learn.microsoft.com/powershell/module/az.network/new-aznetworkmanagerstaticmember
 schema: 2.0.0
 ---
 
@@ -219,5 +219,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Get-AzNetworkManagerStaticMember](./Get-AzNetworkManagerStaticMember.md)
 
 [Remove-AzNetworkManagerStaticMember](./Remove-AzNetworkManagerStaticMember.md)
-
-[Set-AzNetworkManagerStaticMember](./Set-AzNetworkManagerStaticMember.md)
